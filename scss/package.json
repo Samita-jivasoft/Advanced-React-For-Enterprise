@@ -1,9 +1,21 @@
 {
-  "name": "@Advanced-React-For-Enterprise/scss",
+  "name": "@advanced-react-for-enterprise/scss",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
     "normalize-scss": "^8.0.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.3.3",
+    "stylelint": "^16.9.0",
+    "stylelint-config-prettier": "^9.0.5",
+    "stylelint-config-sass-guidelines": "^12.0.0",
+    "stylelint-prettier": "^5.0.2"
+  },
+
+  "scripts": {
+    "lint": "stylelint './**/*.scss'",
+     "lint:fix": "yarn lint --fix"
   }
 }
