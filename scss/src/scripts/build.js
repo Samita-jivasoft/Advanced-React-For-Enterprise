@@ -1,21 +1,47 @@
 const Fs = require('fs');
 const Path = require('path');
-const Sass = require('sass');
+const Sass = require('sass'); // Changed from 'node-sass' to 'sass'
 
-const outputDir = Path.resolve('src/lib');
-const outputFile = Path.join(outputDir, 'global.css');
+// Function to get all component SCSS files
+const getComponents = () => {
+    let allComponents = [];
 
-// Ensure the output directory exists
-if (!Fs.existsSync(outputDir)) {
-    Fs.mkdirSync(outputDir, { recursive: true });
-}
+    const types = ['atoms', 'molecules', 'organisms']; //Which folder we are going into
 
-const result = Sass.renderSync({
-    file: Path.resolve('src/global.scss'),
-    outputStyle: 'expanded',
-    includePaths: [Path.resolve('src')]
+    types.forEach(type => {
+        const allFiles = Fs.readdirSync(`src/${type}`).map(file => ({
+            input: `src/${type}/${file}`,
+            output: `src/lib/${file.slice(0, -4) + 'css'}` 
+        })); //Read the src/type and it gives the array of all files found
+
+        allComponents = [
+            ...allComponents,
+            ...allFiles
+        ]; 
+    });
+
+    return allComponents;
+};
+
+console.log(getComponents())
+// Function to compile SCSS to CSS
+const compile = (path, fileName) => {
+    const result = Sass.renderSync({
+        file: Path.resolve(path), // Changed 'data' to 'file' for compiling a file directly
+        outputStyle: 'expanded',
+        includePaths: [Path.resolve('src')]
+    });
+
+    Fs.writeFileSync(
+        Path.resolve(fileName),
+        result.css.toString()
+    );    
+};
+
+// Compile global SCSS file
+compile('src/global.scss', 'src/lib/global.css');
+
+// Compile each component SCSS file
+getComponents().forEach(component => {
+    compile(component.input, component.output);
 });
-
-console.log(result.css.toString())
-Fs.writeFileSync(outputFile, result.css.toString());
-
