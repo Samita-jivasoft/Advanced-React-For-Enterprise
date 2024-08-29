@@ -28884,7 +28884,33 @@ if ("development" === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.development.js":"../../../node_modules/react-dom/cjs/react-dom.development.js"}],"../../../node_modules/@advanced-react-for-enterprise/react/lib/atoms/Button/Button.js":[function(require,module,exports) {
+},{"./cjs/react-dom.development.js":"../../../node_modules/react-dom/cjs/react-dom.development.js"}],"../../../node_modules/react-dom/client.js":[function(require,module,exports) {
+'use strict';
+
+var m = require('react-dom');
+if ("development" === 'production') {
+  exports.createRoot = m.createRoot;
+  exports.hydrateRoot = m.hydrateRoot;
+} else {
+  var i = m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+  exports.createRoot = function (c, o) {
+    i.usingClientEntryPoint = true;
+    try {
+      return m.createRoot(c, o);
+    } finally {
+      i.usingClientEntryPoint = false;
+    }
+  };
+  exports.hydrateRoot = function (c, h, o) {
+    i.usingClientEntryPoint = true;
+    try {
+      return m.hydrateRoot(c, h, o);
+    } finally {
+      i.usingClientEntryPoint = false;
+    }
+  };
+}
+},{"react-dom":"../../../node_modules/react-dom/index.js"}],"../../../node_modules/@advanced-react-for-enterprise/react/lib/atoms/Button/Button.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -28917,13 +28943,17 @@ function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
-var _reactDom = _interopRequireDefault(require("react-dom"));
+var _client = require("react-dom/client");
 var _lib = require("@advanced-react-for-enterprise/react/lib");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
-_reactDom.default.render(_react.default.createElement(_lib.Button, {
+// Find the root element in the DOM
+var rootElement = document.getElementById('root');
+// Create a root and render the component
+var root = (0, _client.createRoot)(rootElement);
+root.render(_react.default.createElement(_lib.Button, {
   label: "Example Button"
-}), document.getElementById('root'));
-},{"react":"../../../node_modules/react/index.js","react-dom":"../../../node_modules/react-dom/index.js","@advanced-react-for-enterprise/react/lib":"../../../node_modules/@advanced-react-for-enterprise/react/lib/index.js"}],"../../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+}));
+},{"react":"../../../node_modules/react/index.js","react-dom/client":"../../../node_modules/react-dom/client.js","@advanced-react-for-enterprise/react/lib":"../../../node_modules/@advanced-react-for-enterprise/react/lib/index.js"}],"../../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -28948,7 +28978,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60973" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62159" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
