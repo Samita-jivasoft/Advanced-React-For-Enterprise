@@ -1,0 +1,24 @@
+{
+  "name": "@advanced-react-for-enterprise/core",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Samita-jivasoft/Advanced-React-For-Enterprise.git",
+  "author": "ShresthaSamita <samita.shrestha@jivasoft.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "lerna": "^8.1.8"
+  },
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/normalize-scss"
+    ]
+  },
+  "scripts": {
+    "build": "yarn lerna run build"
+  }
+
+}
