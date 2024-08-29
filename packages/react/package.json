@@ -1,0 +1,11 @@
+{
+  "name": "@advanced-react-for-enterprise/react",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^18.3.4",
+    "react": "^18.3.1",
+    "typescript": "^5.5.4"
+  }
+}
