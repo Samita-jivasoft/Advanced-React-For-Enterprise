@@ -1,0 +1,14 @@
+{
+  "name": "@advanced-react-for-enterprise/foundation",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.5.4"
+  },
+
+  "scripts": {
+    "build": "tsc",
+    "dev": "yarn build -w"
+  }
+}

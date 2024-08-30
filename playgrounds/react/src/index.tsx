@@ -1,10 +1,14 @@
 import React from "react";
 import ReactDOM from 'react-dom'
 
-import { Color } from '@advanced-react-for-enterprise/react'
-import '@advanced-react-for-enterprise/scss/lib/Utilities'
+import { Color, Text } from '@advanced-react-for-enterprise/react'
+
+
+import '@advanced-react-for-enterprise/scss/lib/Utilities.css'
+import '@advanced-react-for-enterprise/scss/lib/Text.css'
+import '@advanced-react-for-enterprise/scss/lib/global.css'
 
 ReactDOM.render(
-    <Color hexCode='#000' width='lg' height='lg' />,
+    <Text size='lg'>this is some text</Text>,
     document.querySelector('#root')
 )
