@@ -1,14 +1,9 @@
 import React from "react";
-import { createRoot } from "react-dom/client";
-import { Button } from "@advanced-react-for-enterprise/react/lib"; 
+import ReactDOM from 'react-dom'
 
-import '@advanced-react-for-enterprise/scss/lib/Button.css'
-const rootElement = document.getElementById('root');
+import { Color } from '@advanced-react-for-enterprise/react'
 
-if (rootElement) {
-    
-    const root = createRoot(rootElement);
-    root.render(<Button label="Example Button" />);
-} else {
-    console.error("Root element not found.");
-}
+ReactDOM.render(
+    <Color hexCode='#000' width='1rem' height='1rem' />,
+    document.querySelector('#root')
+)

@@ -28884,33 +28884,7 @@ if ("development" === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.development.js":"../../../node_modules/react-dom/cjs/react-dom.development.js"}],"../../../node_modules/react-dom/client.js":[function(require,module,exports) {
-'use strict';
-
-var m = require('react-dom');
-if ("development" === 'production') {
-  exports.createRoot = m.createRoot;
-  exports.hydrateRoot = m.hydrateRoot;
-} else {
-  var i = m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
-  exports.createRoot = function (c, o) {
-    i.usingClientEntryPoint = true;
-    try {
-      return m.createRoot(c, o);
-    } finally {
-      i.usingClientEntryPoint = false;
-    }
-  };
-  exports.hydrateRoot = function (c, h, o) {
-    i.usingClientEntryPoint = true;
-    try {
-      return m.hydrateRoot(c, h, o);
-    } finally {
-      i.usingClientEntryPoint = false;
-    }
-  };
-}
-},{"react-dom":"../../../node_modules/react-dom/index.js"}],"../../../node_modules/@advanced-react-for-enterprise/react/lib/atoms/Button/Button.js":[function(require,module,exports) {
+},{"./cjs/react-dom.development.js":"../../../node_modules/react-dom/cjs/react-dom.development.js"}],"../../../node_modules/@advanced-react-for-enterprise/react/lib/atoms/Color/Color.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -28919,103 +28893,47 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var _react = _interopRequireDefault(require("react"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
-const Button = ({
-  label
+const Color = ({
+  hexCode,
+  width,
+  height
 }) => {
-  return _react.default.createElement("button", {
-    className: 'dse-button-container'
-  }, label || 'Button', "-Label here");
+  return _react.default.createElement("div", {
+    style: {
+      backgroundColor: hexCode,
+      width,
+      height
+    }
+  });
 };
-exports.default = Button;
+exports.default = Color;
 },{"react":"../../../node_modules/react/index.js"}],"../../../node_modules/@advanced-react-for-enterprise/react/lib/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-Object.defineProperty(exports, "Button", {
+Object.defineProperty(exports, "Color", {
   enumerable: true,
   get: function () {
-    return _Button.default;
+    return _Color.default;
   }
 });
-var _Button = _interopRequireDefault(require("./atoms/Button/Button.js"));
+var _Color = _interopRequireDefault(require("./atoms/Color/Color.js"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
-},{"./atoms/Button/Button.js":"../../../node_modules/@advanced-react-for-enterprise/react/lib/atoms/Button/Button.js"}],"../../../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
-var bundleURL = null;
-function getBundleURLCached() {
-  if (!bundleURL) {
-    bundleURL = getBundleURL();
-  }
-  return bundleURL;
-}
-function getBundleURL() {
-  // Attempt to find the URL of the current script and use that as the base URL
-  try {
-    throw new Error();
-  } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
-    if (matches) {
-      return getBaseURL(matches[0]);
-    }
-  }
-  return '/';
-}
-function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)?\/[^/]+(?:\?.*)?$/, '$1') + '/';
-}
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-},{}],"../../../node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
-var bundle = require('./bundle-url');
-function updateLink(link) {
-  var newLink = link.cloneNode();
-  newLink.onload = function () {
-    link.remove();
-  };
-  newLink.href = link.href.split('?')[0] + '?' + Date.now();
-  link.parentNode.insertBefore(newLink, link.nextSibling);
-}
-var cssTimeout = null;
-function reloadCSS() {
-  if (cssTimeout) {
-    return;
-  }
-  cssTimeout = setTimeout(function () {
-    var links = document.querySelectorAll('link[rel="stylesheet"]');
-    for (var i = 0; i < links.length; i++) {
-      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
-        updateLink(links[i]);
-      }
-    }
-    cssTimeout = null;
-  }, 50);
-}
-module.exports = reloadCSS;
-},{"./bundle-url":"../../../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"../../../node_modules/@advanced-react-for-enterprise/scss/lib/Button.css":[function(require,module,exports) {
-
-        var reloadCSS = require('_css_loader');
-        module.hot.dispose(reloadCSS);
-        module.hot.accept(reloadCSS);
-      
-},{"_css_loader":"../../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index.tsx":[function(require,module,exports) {
+},{"./atoms/Color/Color.js":"../../../node_modules/@advanced-react-for-enterprise/react/lib/atoms/Color/Color.js"}],"index.tsx":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
-var _client = require("react-dom/client");
-var _lib = require("@advanced-react-for-enterprise/react/lib");
-require("@advanced-react-for-enterprise/scss/lib/Button.css");
+var _reactDom = _interopRequireDefault(require("react-dom"));
+var _react2 = require("@advanced-react-for-enterprise/react");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
-var rootElement = document.getElementById('root');
-if (rootElement) {
-  var root = (0, _client.createRoot)(rootElement);
-  root.render(_react.default.createElement(_lib.Button, {
-    label: "Example Button"
-  }));
-} else {
-  console.error("Root element not found.");
-}
-},{"react":"../../../node_modules/react/index.js","react-dom/client":"../../../node_modules/react-dom/client.js","@advanced-react-for-enterprise/react/lib":"../../../node_modules/@advanced-react-for-enterprise/react/lib/index.js","@advanced-react-for-enterprise/scss/lib/Button.css":"../../../node_modules/@advanced-react-for-enterprise/scss/lib/Button.css"}],"../../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+_reactDom.default.render(_react.default.createElement(_react2.Color, {
+  hexCode: '#000',
+  width: '1rem',
+  height: '1rem'
+}), document.querySelector('#root'));
+},{"react":"../../../node_modules/react/index.js","react-dom":"../../../node_modules/react-dom/index.js","@advanced-react-for-enterprise/react":"../../../node_modules/@advanced-react-for-enterprise/react/lib/index.js"}],"../../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -29040,7 +28958,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62241" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50401" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
