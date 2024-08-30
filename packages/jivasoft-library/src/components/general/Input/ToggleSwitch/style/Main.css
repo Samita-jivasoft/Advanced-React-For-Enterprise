@@ -1,0 +1,118 @@
+:root {
+    --oncolor: #060;
+    --offcolor:#bbb;
+    --color:#fff;
+    --translate:40px;
+    --width:null;
+    --height:null; 
+    --line-height:null; 
+    --margin:null;
+    --switch-width:null;
+}
+
+.toggle-switch-container {
+    /* border: 2px solid red; */
+    /* display: inline-flex;*/
+    display:flex;
+
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; 
+    text-align: center;
+}
+
+.toggle-switch {
+    /* border:2px solid yellowgreen; */
+    position: relative;
+    width: var(--width) !important;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+}
+
+.checkbox {
+    display: none;
+}
+
+.label {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    border: 0 solid var(--color);
+    border-radius: 20px;
+    margin: 0;
+}
+
+.inner {
+    /* border: 2px solid red; */
+    display: block;
+    width: 200%;
+    margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+
+.inner:before,
+.inner:after {
+    /* border:2px solid red; */
+    display: block;
+    float: left;
+    width: 50%;
+    height: var(--height);
+    padding: 0;
+    line-height: var(--line-height);
+    color: var(--color);
+    font-size: 14px;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+.inner:before {
+    /* border:2px solid purple; */
+    content: attr(data-yes);
+    text-transform: uppercase;
+    padding-left: 10px;
+    background-color: var(--oncolor);
+    color: var(--color);
+    text-align: left;
+}
+
+.disabled {
+    background-color: var(--offcolor);
+    cursor: not-allowed;
+}
+
+.disabled:before {
+    background-color: var(--oncolor);
+    cursor: not-allowed;
+}
+
+.inner:after {
+    content: attr(data-no);
+    text-transform: uppercase;
+    padding-right: 10px;
+    background-color: var(--offcolor);
+    color: var(--color);
+    text-align: right;
+}
+
+.switch {
+    display: block;
+    width: var(--switch-width);
+    margin: var(--margin);
+    background: var(--color);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: var(--translate);
+    border: 0 solid var(--color);
+    border-radius: 20px;
+    transition: all 0.3s ease-in 0s;
+}
+
+.checkbox:checked+.label .inner {
+    margin-left: 0;
+}
+
+.checkbox:checked+.label .switch {
+    right: 0px;
+}

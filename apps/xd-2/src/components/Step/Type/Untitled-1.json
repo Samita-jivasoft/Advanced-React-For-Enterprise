@@ -1,0 +1,225 @@
+{
+  //array of lists
+  //type: 'tolist' appears on right
+  //type: 'fromlist' appears on left
+  lists: [
+    {
+      //Name of the list
+      label: 'Test List',
+      id: '0',
+      //identifies per item the name of the id property
+      idcol: 'myid',
+      //label of action button that appears beside each item
+      actionlabel: 'ADD',
+      type: 'fromlist', // where to put the list on the screen
+      canmoveto: ['1'], //id of the list you want to move stuff to
+      //each item in the list
+      cruditems: [
+        { id: 'add0', label: 'Add' },
+        { id: 'delete0', label: 'Delete' },
+        { id: 'edit0', label: 'Edit' },
+        { id: 'view0', label: 'View' },
+        { id: 'print0', label: 'Print' }
+      ],
+      items: [
+        {
+          //property matched to idcol is the id
+          myid: '1',
+
+          //custom columns
+          title: 'Sam',
+          amount: 0,
+          day: 'today'
+        },
+        {
+          //property matched to idcol is the id
+          myid: '2',
+
+          //custom columns
+          title: 'Beth',
+          amount: 20,
+          day: 'amorrow'
+        },
+        {
+          //property matched to idcol is the id
+          myid: '4',
+
+          //custom columns
+          title: 'Bethany',
+          amount: 20,
+          day: 'next month'
+        },
+        {
+          //property matched to idcol is the id
+          myid: '3',
+
+          //custom columns
+          title: 'Chrispaul',
+          amount: 2,
+          day: 'next week'
+        },
+        {
+          //property matched to idcol is the id
+          myid: '5',
+
+          //custom columns
+          title: 'Sammuel',
+          amount: 0,
+          day: 'today'
+        },
+        {
+          //property matched to idcol is the id
+          myid: '6',
+
+          //custom columns
+          title: 'Bethsaida',
+          amount: 15,
+          day: 'next month'
+        },
+        {
+          //property matched to idcol is the id
+          myid: '7',
+
+          //custom columns
+          title: 'John',
+          amount: 1,
+          day: 'tomorrow'
+        },
+        {
+          //property matched to idcol is the id
+          myid: '8',
+
+          //custom columns
+          title: 'Dan',
+          amount: 50,
+          day: 'next week'
+        },
+        {
+          //property matched to idcol is the id
+          myid: '9',
+
+          //custom columns
+          title: 'tomorrow',
+          amount: 4,
+          day: 'next week'
+        }
+      ]
+    },
+    // {
+    //   //Name of the list
+    //   label: 'Other From List',
+    //   id: '4',
+    //   //identifies per item the name of the id property
+    //   idcol: 'myid',
+    //   //label of action button that appears beside each item
+    //   actionlabel: 'ADD',
+    //   type: 'fromlist', // where to put the list on the screen
+    //   canmoveto: ['1', '2'], //id of the list you want to move stuff to
+    //   //each item in the list
+    //   items: [
+    //     {
+    //       //property matched to idcol is the id
+    //       myid: '11',
+
+    //       //custom columns
+    //       title: 'Steven',
+    //       amount: 20,
+    //       day: 'tomorrow'
+    //     },
+    //     {
+    //       //property matched to idcol is the id
+    //       myid: '12',
+
+    //       //custom columns
+    //       title: 'Omar',
+    //       amount: 2,
+    //       day: 'next week'
+    //     },
+    //     {
+    //       //property matched to idcol is the id
+    //       myid: '13',
+
+    //       //custom columns
+    //       title: 'Other',
+    //       amount: 12,
+    //       day: 'tomorrow'
+    //     },
+    //     {
+    //       //property matched to idcol is the id
+    //       myid: '14',
+
+    //       //custom columns
+    //       title: 'Doe',
+    //       amount: 45,
+    //       day: 'next week'
+    //     }
+    //   ]
+    // },
+    // {
+    //   type: 'tolist',
+    //   id: '1',
+    //   canmoveto: ['0', '4'], //id of the list you want to move stuff to
+    //   label: 'Good Developers',
+    //   idcol: 'myotherid',
+    //   actionlabel: 'REMOVE',
+    //   cruditems: [
+    //     { id: 'add1', label: 'Add' },
+    //     { id: 'delete1', label: 'Delete' }
+    //   ],
+    //   items: [
+    //     {
+    //       //property matched to idcol is the id
+    //       myotherid: '10',
+
+    //       //custom columns
+    //       title: 'Other',
+    //       amount: 10,
+    //       day: 'next month'
+    //     }
+    //   ]
+    // }
+    // {
+    //   type: 'tolist',
+    //   id: '2',
+    //   canmoveto: ['0', '4'], //id of the list you want to move stuff to
+    //   label: 'Other To List',
+    //   idcol: 'myotherid',
+    //   actionlabel: 'REMOVE',
+    //   items: [
+    //   ]
+    // }
+  ],
+
+  //custom columns
+  columns: [
+    {
+      title: {
+        id:'1a',
+        //this is the friendly name that appears in the UI
+        label: 'Title',
+        //tells UI if this column is a literal table column that appears in the list view
+        iscolumn: true,
+        //tells the UI if the column can be used as a filter
+        isfilter: true,
+        formelement: { datatype: 'string' }
+
+        //TODO: FormElement? DataType?
+      },
+      amount: {
+        id:'1b',
+        label: 'Amount',
+        iscolumn: true,
+        isfilter: false,
+        formelement: { datatype: 'int' }
+      },
+
+      day: {
+        id:'1c',
+        label: 'Day',
+        iscolumn: true,
+        isfilter: true,
+        formelement: { datatype: 'string' }
+      }
+    }
+  ]
+}

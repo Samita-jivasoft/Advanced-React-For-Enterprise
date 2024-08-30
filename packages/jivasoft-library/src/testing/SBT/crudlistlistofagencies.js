@@ -1,0 +1,230 @@
+export const crudlistlistofagencies = {
+    "stepid": "C4132A69-8622-4C19-B0A0-2F700C84AF0D",
+    "crudid": "34D5E98D-7B73-4C79-A56E-4F8228DE35D7",
+    "crudname": "Agencies With Pricing CRUD",
+    "reviewrequired": 0,
+    "nextstructtype": "StepWithAgency",
+    "nextsp": "exec [spxd_CRUD_Get_Agencies_With_Pricing_CRUDList] @WorkflowID = '%v', @StepID = '%v', @AgencyID = '%v'",
+    "parentobjname": "step",
+    "childobjname": "crud",
+    "parentid": "stepid",
+    "childid": "stepid",
+    "crudlist": [
+        {
+            "crudlistid": "7B4DDEDF-56AA-4CF2-B9C1-811790A82717",
+            "crudid": "34D5E98D-7B73-4C79-A56E-4F8228DE35D7",
+            "label": "Agencies",
+            "idcolumn": "AgencyID",
+            "type": "fromlist",
+            "actionlabel": "",
+            "nextstructtype": "StepWithAgency",
+            "nextsp": "exec [spxd_CRUD_Get_Agencies_With_Pricing_CRUDList_CRUDAction] @WorkflowID = '%v', @StepID = '%v', @AgencyID = '%v'",
+            "parentobjname": "crud",
+            "childobjname": "crudlist",
+            "parentid": "crudid",
+            "childid": "crudid",
+            "crudaction": [
+                {
+                    "crudactionid": "6211BE28-25C6-4DEC-AC3A-401F53F9C076",
+                    "crudlistid": "7B4DDEDF-56AA-4CF2-B9C1-811790A82717",
+                    "label": "Get Estimate",
+                    "type": 2,
+                    "peritem": 1,
+                    "workflowid": "F4D01BB2-C795-4CE3-9369-8BBC3836E2AB",
+                    "nextstructtype": "StepWithAgency",
+                    "nextsp": "exec [spxd_CRUD_Get_Agencies_With_Pricing_CRUDList_CRUDColumn] @WorkflowID = '%v', @StepID = '%v', @AgencyID = '%v'",
+                    "parentobjname": "crudlist",
+                    "childobjname": "crudaction",
+                    "parentid": "crudlistid",
+                    "childid": "crudlistid"
+                }
+            ],
+            "crudlistitems": [
+                {
+                    "agencyid": "222EAB68-E73D-4A6D-A630-83D8AA9C97C4",
+                    "b3f344a9-c35b-4ba0-84c9-2188416b1131": "Beachwood PD NJ",
+                    "c6dc55b9-a8ce-48c6-8087-5860828c90df": 5,
+                    "crudlistid": "7B4DDEDF-56AA-4CF2-B9C1-811790A82717",
+                    "nextstructtype": "",
+                    "nextsp": "",
+                    "parentobjname": "crudlist",
+                    "childobjname": "crudlistitems",
+                    "parentid": "crudlistid",
+                    "childid": "crudlistid"
+                },
+                {
+                    "agencyid": "D0642E6F-AA8B-4541-8FC2-16AA85B13201",
+                    "b3f344a9-c35b-4ba0-84c9-2188416b1131": "Charleston County SO SC",
+                    "c6dc55b9-a8ce-48c6-8087-5860828c90df": 7,
+                    "crudlistid": "7B4DDEDF-56AA-4CF2-B9C1-811790A82717",
+                    "nextstructtype": "",
+                    "nextsp": "",
+                    "parentobjname": "crudlist",
+                    "childobjname": "crudlistitems",
+                    "parentid": "crudlistid",
+                    "childid": "crudlistid"
+                },
+                {
+                    "agencyid": "8316B485-338D-4ABD-AB68-EFB797F0E6B5",
+                    "b3f344a9-c35b-4ba0-84c9-2188416b1131": "Colorado Springs PD CO",
+                    "c6dc55b9-a8ce-48c6-8087-5860828c90df": 14,
+                    "crudlistid": "7B4DDEDF-56AA-4CF2-B9C1-811790A82717",
+                    "nextstructtype": "",
+                    "nextsp": "",
+                    "parentobjname": "crudlist",
+                    "childobjname": "crudlistitems",
+                    "parentid": "crudlistid",
+                    "childid": "crudlistid"
+                },
+                {
+                    "agencyid": "A0C5DFB0-780D-4B63-BDEC-0794C68C3150",
+                    "b3f344a9-c35b-4ba0-84c9-2188416b1131": "East Brunswick Test Instance",
+                    "c6dc55b9-a8ce-48c6-8087-5860828c90df": 19,
+                    "crudlistid": "7B4DDEDF-56AA-4CF2-B9C1-811790A82717",
+                    "nextstructtype": "",
+                    "nextsp": "",
+                    "parentobjname": "crudlist",
+                    "childobjname": "crudlistitems",
+                    "parentid": "crudlistid",
+                    "childid": "crudlistid"
+                },
+                {
+                    "agencyid": "0CEEEAFD-AC66-4B65-8B5A-13388CE42E84",
+                    "b3f344a9-c35b-4ba0-84c9-2188416b1131": "Greensboro PD NJ - Test",
+                    "c6dc55b9-a8ce-48c6-8087-5860828c90df": 11,
+                    "crudlistid": "7B4DDEDF-56AA-4CF2-B9C1-811790A82717",
+                    "nextstructtype": "",
+                    "nextsp": "",
+                    "parentobjname": "crudlist",
+                    "childobjname": "crudlistitems",
+                    "parentid": "crudlistid",
+                    "childid": "crudlistid"
+                },
+                {
+                    "agencyid": "2B38A3B3-201C-4354-A82A-A471A6ADDE2B",
+                    "b3f344a9-c35b-4ba0-84c9-2188416b1131": "Lumberton PD NJ",
+                    "c6dc55b9-a8ce-48c6-8087-5860828c90df": 6,
+                    "crudlistid": "7B4DDEDF-56AA-4CF2-B9C1-811790A82717",
+                    "nextstructtype": "",
+                    "nextsp": "",
+                    "parentobjname": "crudlist",
+                    "childobjname": "crudlistitems",
+                    "parentid": "crudlistid",
+                    "childid": "crudlistid"
+                },
+                {
+                    "agencyid": "C0C86BA5-E237-4ED9-9B99-8936F25A4B7B",
+                    "b3f344a9-c35b-4ba0-84c9-2188416b1131": "Quincy Police Department",
+                    "c6dc55b9-a8ce-48c6-8087-5860828c90df": 16,
+                    "crudlistid": "7B4DDEDF-56AA-4CF2-B9C1-811790A82717",
+                    "nextstructtype": "",
+                    "nextsp": "",
+                    "parentobjname": "crudlist",
+                    "childobjname": "crudlistitems",
+                    "parentid": "crudlistid",
+                    "childid": "crudlistid"
+                },
+                {
+                    "agencyid": "0C0B4ED3-A563-40BD-A7E8-59375E90F645",
+                    "b3f344a9-c35b-4ba0-84c9-2188416b1131": "Stratford PD CT",
+                    "c6dc55b9-a8ce-48c6-8087-5860828c90df": 5,
+                    "crudlistid": "7B4DDEDF-56AA-4CF2-B9C1-811790A82717",
+                    "nextstructtype": "",
+                    "nextsp": "",
+                    "parentobjname": "crudlist",
+                    "childobjname": "crudlistitems",
+                    "parentid": "crudlistid",
+                    "childid": "crudlistid"
+                },
+                {
+                    "agencyid": "5A3DE514-0FC3-4FC6-97A3-F1CDA3CF1E63",
+                    "b3f344a9-c35b-4ba0-84c9-2188416b1131": "Watertown PD CT",
+                    "c6dc55b9-a8ce-48c6-8087-5860828c90df": 7,
+                    "crudlistid": "7B4DDEDF-56AA-4CF2-B9C1-811790A82717",
+                    "nextstructtype": "",
+                    "nextsp": "",
+                    "parentobjname": "crudlist",
+                    "childobjname": "crudlistitems",
+                    "parentid": "crudlistid",
+                    "childid": "crudlistid"
+                }
+            ]
+        }
+    ],
+    "crudcolumn": [
+        {
+            "crudcolumnid": "B3F344A9-C35B-4BA0-84C9-2188416B1131",
+            "formelementid": "60914C4A-962C-46D1-A6C1-548BF70A2161",
+            "crudid": "34D5E98D-7B73-4C79-A56E-4F8228DE35D7",
+            "label": "Agency Name",
+            "iscolumn": 1,
+            "isfilter": 1,
+            "nextstructtype": "StepWithAgency",
+            "nextsp": "exec [spxd_CRUD_Get_Agencies_With_Pricing_CRUDList_CRUDColumn_CRUDFormElement] @WorkflowID = '%v', @StepID = '%v', @AgencyID = '%v'",
+            "parentobjname": "crud",
+            "childobjname": "crudcolumn",
+            "parentid": "crudid",
+            "childid": "crudid",
+            "formelement": [
+                {
+                    "formelementid": "60914C4A-962C-46D1-A6C1-548BF70A2161",
+                    "sequence": 1,
+                    "selectoptions": "",
+                    "required": 0,
+                    "label": "Agency Name",
+                    "validminimum": 0,
+                    "validmaximum": 128,
+                    "masktype": "",
+                    "datatype": "string",
+                    "canedit": 1,
+                    "allowmultiplepicklistselections": 1,
+                    "paramname": "agencyname",
+                    "nextstructtype": "StepWithSoftwareUserAndAgency",
+                    "nextsp": "exec [spxd_CRUD_Get_Agencies_With_Pricing_CRUDList_CRUDListItems] @WorkflowID = '%v', @StepID = '%v', @AgencyID = '%v', @SoftwareUserID = '%v'",
+                    "parentobjname": "crudcolumn",
+                    "childobjname": "formelement",
+                    "parentid": "formelementid",
+                    "childid": "formelementid"
+                }
+            ],
+            "id": "b3f344a9-c35b-4ba0-84c9-2188416b1131"
+        },
+        {
+            "crudcolumnid": "C6DC55B9-A8CE-48C6-8087-5860828C90DF",
+            "formelementid": "FC2036B3-9EA2-4255-8BCD-8D05189B116A",
+            "crudid": "34D5E98D-7B73-4C79-A56E-4F8228DE35D7",
+            "label": "Charge Count",
+            "iscolumn": 1,
+            "isfilter": 1,
+            "nextstructtype": "StepWithAgency",
+            "nextsp": "exec [spxd_CRUD_Get_Agencies_With_Pricing_CRUDList_CRUDColumn_CRUDFormElement] @WorkflowID = '%v', @StepID = '%v', @AgencyID = '%v'",
+            "parentobjname": "crud",
+            "childobjname": "crudcolumn",
+            "parentid": "crudid",
+            "childid": "crudid",
+            "formelement": [
+                {
+                    "formelementid": "FC2036B3-9EA2-4255-8BCD-8D05189B116A",
+                    "sequence": 2,
+                    "selectoptions": "",
+                    "required": 0,
+                    "label": "Rate Item Count",
+                    "validminimum": 0,
+                    "validmaximum": 128,
+                    "masktype": "",
+                    "datatype": "string",
+                    "canedit": 1,
+                    "allowmultiplepicklistselections": 1,
+                    "paramname": "rateitemcount",
+                    "nextstructtype": "StepWithSoftwareUserAndAgency",
+                    "nextsp": "exec [spxd_CRUD_Get_Agencies_With_Pricing_CRUDList_CRUDListItems] @WorkflowID = '%v', @StepID = '%v', @AgencyID = '%v', @SoftwareUserID = '%v'",
+                    "parentobjname": "crudcolumn",
+                    "childobjname": "formelement",
+                    "parentid": "formelementid",
+                    "childid": "formelementid"
+                }
+            ],
+            "id": "c6dc55b9-a8ce-48c6-8087-5860828c90df"
+        }
+    ]
+}

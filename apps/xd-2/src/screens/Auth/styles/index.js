@@ -1,0 +1,5 @@
+export * from './Main'
+export * from './Header'
+export * from './Body'
+export * from './FormArea'
+export * from './LinkArea'

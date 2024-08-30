@@ -1,0 +1,11 @@
+  <Search
+          items={dummyAgencies}
+          textPlaceholder={'Search for an Agency'}
+          onSelect={(selected)=> appDispatch({type:'SELECT_AGENCY',currentAgency:selected})}
+          unSelect={()=> appDispatch({type:'UNSELECT_AGENCY'})}
+          icons={[
+            {name:'fire', icon:<AiFillFire size={'1.5rem'}/>},
+            {name:'police',icon:<GiPoliceBadge size={'1.5rem'}/>},
+            {name:'plane',icon:<CgAirplane size={'1.5rem'}/>}
+          ]}
+        />

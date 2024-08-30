@@ -1,0 +1,104 @@
+{
+  "name": "@jivasoft/jivasoft-lib",
+  "version": "4.3.9",
+  "description": "Jivasoft Library",
+  "files": [
+    "dist/"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "dependencies": {
+    "@grapecity/activereports-react": "^4.2.2",
+    "@mapbox/mapbox-gl-geocoder": "^5.0.2",
+    "@mapbox/search-js-react": "^1.0.0-beta.21",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^28.1.5",
+    "@types/node": "^18.0.4",
+    "@types/react": "^18.02.15",
+    "@types/react-dom": "^18.0.6",
+    "axios": "^0.25.0",
+    "classnames": "^2.3.1",
+    "core-js": "^3.25.0",
+    "crypto-js": "^4.1.1",
+    "dayjs": "^1.11.10",
+    "framer-motion": "^6.2.3",
+    "google-map-react": "^2.2.1",
+    "html2canvas": "^1.4.1",
+    "leaflet": "^1.9.4",
+    "leaflet-defaulticon-compatibility": "^0.1.2",
+    "mapbox-gl": "^3.4.0",
+    "react": "^18.2.0",
+    "react-base-table": "^1.13.4",
+    "react-device-detect": "^2.2.3",
+    "react-dom": "^18.2.0",
+    "react-draggable": "^4.4.5",
+    "react-icons": "^5.0.1",
+    "react-leaflet": "^4.2.1",
+    "react-leaflet-fullscreen": "^4.1.1",
+    "react-pdf": "^7.3.3",
+    "react-router-dom": "^6.2.1",
+    "react-scripts": "5.0.1",
+    "react-texty": "^0.6.0",
+    "react-time-picker": "^4.5.0",
+    "react-window": "^1.8.7",
+    "serve": "^14.0.1",
+    "styled-components": "^5.3.3",
+    "typescript": "^4.7.4",
+    "universal-cookie": "^4.0.4",
+    "web-vitals": "^2.1.4",
+    "yarn": "^1.22.17"
+  },
+  "scripts": {
+    "analyze": "react-scripts build && source-map-explorer 'build/static/js/*.js'",
+    "start": "react-scripts start",
+    "build": "rm -rf dist && NODE_ENV=production babel src/components --out-dir dist/components --copy-files && NODE_ENV=production babel src/app --out-dir dist/app --copy-files",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "coverage": "yarn test --coverage --watchAll --collectCoverageFrom='[\"src/app/helpers/*.js\", \"src/app/helpers/**/*.js\", \"!src/app/helpers/index.js\", \"!src/app/helpers/**/index.js\"]'"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.18.10",
+    "@babel/core": "^7.18.10",
+    "@babel/preset-env": "^7.18.10",
+    "prop-types": "^15.8.1",
+    "source-map-explorer": "^2.5.3"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "author": "jivasoft",
+  "license": "ISC"
+}

@@ -1,0 +1,14 @@
+@import "@grapecity/activereports/styles/ar-js-ui.css";
+@import "@grapecity/activereports/styles/ar-js-viewer.css";
+@import "@grapecity/activereports/styles/ar-js-designer.css";
+
+#viewer-host{
+  width: 100%;
+  height: 100%;
+  background-color: red;
+}
+
+#designer-host{
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,136 @@
+:root {
+  --bga3: #F1F1F1;
+  --bg0: #C5CEDD;
+  --bgb1: #B4C0D4;
+  --PRIMARY_COLOR: #002b57;
+}
+
+#loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: var(--PRIMARY_COLOR);
+  /* Fallback */
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to bottom,
+      var(--bga3),
+      var(--bg0),
+      var(--bgb1));
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to bottom,
+      var(--bga3),
+      var(--bg0),
+      var(--bgb1));
+
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70%;
+  width: 70%;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  border-radius: 4px;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    width: 90%;
+    height: 90%;
+  }
+
+  .eds-logo-responsive {
+    width: 90%;
+    height: 90%;
+  }
+
+
+}
+
+@media (max-width: 480px) {
+  .dot li {
+    height: 2vw !important;
+    width: 2vw !important;
+  }
+}
+
+.hat {
+  animation: bounce 3s infinite;
+  animation-delay: -3s;
+}
+
+.logo {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.dot li {
+  display: inline-block;
+  list-style: none;
+  height: 1vw;
+  width: 1vw;
+  background: #002b57;
+  border-radius: 100%;
+  margin: 0 0.2em;
+  animation: scale 1s linear infinite alternate;
+}
+
+li:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+li:nth-child(3) {
+  animation-delay: 0.8s;
+}
+
+@keyframes bounce {
+
+  0%,
+  60% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  70% {
+    transform: translateY(-1px) rotate(-2deg);
+  }
+
+  80% {
+    transform: translateY(1px) rotate(2deg);
+  }
+
+  90% {
+    transform: translateY(-1px) rotate(-2deg);
+  }
+
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale(0.4);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

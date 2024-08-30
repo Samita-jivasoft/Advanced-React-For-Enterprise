@@ -1,0 +1,5 @@
+export const xs = 480; // Extra small devices (phones)
+export const sm = 768; // Small devices (tablets)
+export const md = 1024; // Medium devices (small laptops)
+export const lg = 1440; // Large devices (desktops)
+export const xl = 2800; // Extra large devices (large desktops)
