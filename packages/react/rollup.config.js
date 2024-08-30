@@ -5,6 +5,7 @@ export default {
         'src/index.ts',
         'src/atoms/Color/index.ts',
         'src/atoms/Margin/index.ts',
+        'src/molecules/Select/index.ts',
     ],
     output: {
         dir: 'lib',
@@ -16,3 +17,5 @@ export default {
     plugins: [Ts()],
     external: ['react', '@advanced-react-for-enterprise/foundation']
 };
+
+

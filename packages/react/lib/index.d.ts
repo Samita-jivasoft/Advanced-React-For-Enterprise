@@ -1,5 +1,5 @@
 import Color from './atoms/Color';
 import Text from './atoms/Text';
-import Spacing from './foundation/spacing';
 import Margin from './atoms/Margin';
-export { Text, Color, Spacing, Margin };
+import Select from './molecules/Select';
+export { Text, Color, Margin, Select };
