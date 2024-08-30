@@ -28884,7 +28884,35 @@ if ("development" === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.development.js":"../../../node_modules/react-dom/cjs/react-dom.development.js"}],"../../../node_modules/@advanced-react-for-enterprise/react/lib/atoms/Color/Color.js":[function(require,module,exports) {
+},{"./cjs/react-dom.development.js":"../../../node_modules/react-dom/cjs/react-dom.development.js"}],"../../../node_modules/@advanced-react-for-enterprise/react/lib/foundation/spacing.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+const spaces = {
+  xxxs: 'xxxs',
+  // 4px
+  xxs: 'xxs',
+  // 8px
+  xs: 'xs',
+  // 12px
+  sm: 'sm',
+  // 16px
+  md: 'md',
+  // 24px
+  lg: 'lg',
+  // 32px
+  xl: 'xl',
+  // 48px
+  xxl: 'xxl',
+  // 72px
+  xxxl: 'xxxl'
+};
+//The user can now do something like spaces.small
+var Spacing = exports.default = Object.freeze(spaces); //Makes the object non-writable and non-configurable
+},{}],"../../../node_modules/@advanced-react-for-enterprise/react/lib/atoms/Color/Color.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -28892,22 +28920,23 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 var _react = _interopRequireDefault(require("react"));
+var _spacing = _interopRequireDefault(require("../../foundation/spacing.js"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
 const Color = ({
   hexCode,
-  width,
-  height
+  width = _spacing.default.sm,
+  height = _spacing.default.sm
 }) => {
+  const className = `dse-width-${width} dse-height-${height}`;
   return _react.default.createElement("div", {
+    className: className,
     style: {
-      backgroundColor: hexCode,
-      width,
-      height
+      backgroundColor: hexCode
     }
   });
 };
 exports.default = Color;
-},{"react":"../../../node_modules/react/index.js"}],"../../../node_modules/@advanced-react-for-enterprise/react/lib/index.js":[function(require,module,exports) {
+},{"react":"../../../node_modules/react/index.js","../../foundation/spacing.js":"../../../node_modules/@advanced-react-for-enterprise/react/lib/foundation/spacing.js"}],"../../../node_modules/@advanced-react-for-enterprise/react/lib/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -28919,21 +28948,86 @@ Object.defineProperty(exports, "Color", {
     return _Color.default;
   }
 });
+Object.defineProperty(exports, "Spacing", {
+  enumerable: true,
+  get: function () {
+    return _spacing.default;
+  }
+});
 var _Color = _interopRequireDefault(require("./atoms/Color/Color.js"));
+var _spacing = _interopRequireDefault(require("./foundation/spacing.js"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
-},{"./atoms/Color/Color.js":"../../../node_modules/@advanced-react-for-enterprise/react/lib/atoms/Color/Color.js"}],"index.tsx":[function(require,module,exports) {
+},{"./atoms/Color/Color.js":"../../../node_modules/@advanced-react-for-enterprise/react/lib/atoms/Color/Color.js","./foundation/spacing.js":"../../../node_modules/@advanced-react-for-enterprise/react/lib/foundation/spacing.js"}],"../../../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+var bundleURL = null;
+function getBundleURLCached() {
+  if (!bundleURL) {
+    bundleURL = getBundleURL();
+  }
+  return bundleURL;
+}
+function getBundleURL() {
+  // Attempt to find the URL of the current script and use that as the base URL
+  try {
+    throw new Error();
+  } catch (err) {
+    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
+    if (matches) {
+      return getBaseURL(matches[0]);
+    }
+  }
+  return '/';
+}
+function getBaseURL(url) {
+  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)?\/[^/]+(?:\?.*)?$/, '$1') + '/';
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+},{}],"../../../node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
+var bundle = require('./bundle-url');
+function updateLink(link) {
+  var newLink = link.cloneNode();
+  newLink.onload = function () {
+    link.remove();
+  };
+  newLink.href = link.href.split('?')[0] + '?' + Date.now();
+  link.parentNode.insertBefore(newLink, link.nextSibling);
+}
+var cssTimeout = null;
+function reloadCSS() {
+  if (cssTimeout) {
+    return;
+  }
+  cssTimeout = setTimeout(function () {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+    for (var i = 0; i < links.length; i++) {
+      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
+        updateLink(links[i]);
+      }
+    }
+    cssTimeout = null;
+  }, 50);
+}
+module.exports = reloadCSS;
+},{"./bundle-url":"../../../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"../../../node_modules/@advanced-react-for-enterprise/scss/lib/Utilities.css":[function(require,module,exports) {
+
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
+},{"_css_loader":"../../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index.tsx":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
 var _reactDom = _interopRequireDefault(require("react-dom"));
 var _react2 = require("@advanced-react-for-enterprise/react");
+require("@advanced-react-for-enterprise/scss/lib/Utilities");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
 _reactDom.default.render(_react.default.createElement(_react2.Color, {
   hexCode: '#000',
-  width: '1rem',
-  height: '1rem'
+  width: 'lg',
+  height: 'lg'
 }), document.querySelector('#root'));
-},{"react":"../../../node_modules/react/index.js","react-dom":"../../../node_modules/react-dom/index.js","@advanced-react-for-enterprise/react":"../../../node_modules/@advanced-react-for-enterprise/react/lib/index.js"}],"../../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"../../../node_modules/react/index.js","react-dom":"../../../node_modules/react-dom/index.js","@advanced-react-for-enterprise/react":"../../../node_modules/@advanced-react-for-enterprise/react/lib/index.js","@advanced-react-for-enterprise/scss/lib/Utilities":"../../../node_modules/@advanced-react-for-enterprise/scss/lib/Utilities.css"}],"../../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -28958,7 +29052,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50401" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49618" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
