@@ -114,6 +114,15 @@
   font-family: var(--dse-body-font-family, "Playfair Display", serif);
   cursor: pointer;
 }
+.dse-select__caret {
+  transition: all 250ms ease;
+}
+.dse-select__caret--open {
+  transform: rotate(180deg);
+}
+.dse-select__caret--closed {
+  transform: rotate(0deg);
+}
 .dse-select__overlay {
   padding: 0rem;
   margin: 0rem;
