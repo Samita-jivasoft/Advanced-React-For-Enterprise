@@ -30,7 +30,7 @@ const Select: React.FunctionComponent<SelectProps> = ({ options = [], label = 'P
         setOverlayTop((
             labelRef.current?.offsetHeight || 0
         ) + 10)
-    }, [labelRef.current?.offsetHeight]) // Calculating the position of the overlay based on button.
+    }, [labelRef.current?.offsetHeight])
 
     return <div className='dse-select'>
         <button ref={labelRef} className='dse-select__label' onClick={() => onLabelClick()}>
@@ -42,7 +42,7 @@ const Select: React.FunctionComponent<SelectProps> = ({ options = [], label = 'P
         {isOpen ? (
             <ul style={{ top: overlayTop }} className='dse-select__overlay'>
                 {options.map((option, optionIndex) => {
-                    return <li onClick={() => onOptionSelected(option, optionIndex)} key={option.value}>{option.label}</li>
+                    return <li className='dse-select__option' onClick={() => onOptionSelected(option, optionIndex)} key={option.value}>{option.label}</li>
                 })}
             </ul>
         ) : null}

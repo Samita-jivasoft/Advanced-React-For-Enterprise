@@ -21,9 +21,8 @@ const options = [{
 }]
 
 ReactDOM.render(
-    <div>
+    <div style={{ padding: '40px' }}>
         <Select options={options} />
-        <p> This is example Text</p>
     </div>,
     document.querySelector('#root')
 )
