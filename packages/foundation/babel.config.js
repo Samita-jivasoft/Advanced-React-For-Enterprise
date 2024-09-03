@@ -1,0 +1,1 @@
+module.exports = require('../react/babel.config.cjs') //reusing the babel config from packages/react
