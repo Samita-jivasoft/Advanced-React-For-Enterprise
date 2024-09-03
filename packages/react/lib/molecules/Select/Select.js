@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Text from '../../atoms/Text/Text.js';
 
-const Select = ({ options = [], label = 'Please select an option ...', onOptionSelected: handler }) => {
+const Select = ({ options = [], label = 'Please select an option ...', onOptionSelected: handler, renderOption }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedIndex, setSelectedIndex] = useState(null); // To visit the selected component
     const labelRef = useRef(null);
@@ -30,6 +30,23 @@ const Select = ({ options = [], label = 'Please select an option ...', onOptionS
                 React.createElement("path", { d: "M19 9l-7 7-7-7" }))),
         isOpen ? (React.createElement("ul", { style: { top: overlayTop }, className: 'dse-select__overlay' }, options.map((option, optionIndex) => {
             const isSelected = selectedIndex === optionIndex;
+            const renderOptionProps = {
+                option,
+                isSelected,
+                getOptionRecommendedProps: (overrideProps = {}) => {
+                    return {
+                        className: `dse-select__option
+                                ${isSelected ? 'dse-select__option--selected' : ''}
+                            `,
+                        key: option.value,
+                        onClick: () => onOptionSelected(option, optionIndex),
+                        ...overrideProps
+                    };
+                }
+            };
+            if (renderOption) {
+                return renderOption(renderOptionProps);
+            }
             return React.createElement("li", { className: `dse-select__option
                             ${isSelected ? 'dse-select__option--selected' : ''}
                         `, onClick: () => onOptionSelected(option, optionIndex), key: option.value },
