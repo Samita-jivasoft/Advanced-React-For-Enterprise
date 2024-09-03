@@ -12,7 +12,8 @@
       "noUnusedLocals": true,
       "noUnusedParameters": true,
       "declaration": true,
-      "moduleResolution": "node"
+      "moduleResolution": "node",
+      "types": ["jest", "@testing-library/jest-dom"] //Added this pecify type declaration files that TypeScript should include while compiling
     },
     "include": ["src"],
     "exclude": ["node_modules", "lib"]
