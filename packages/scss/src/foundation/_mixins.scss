@@ -30,3 +30,10 @@
 @mixin custom-font-size($var, $default) {
   font-size: var($var, $default);
 }
+@mixin padding($space){
+  padding: map-get($spacing, $space);
+}
+
+@mixin margin($space){
+  margin: map-get($spacing, $space);
+}

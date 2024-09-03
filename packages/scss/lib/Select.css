@@ -99,10 +99,27 @@
  * styles for components.
  *
  */
-.dse-button-container {
+.dse-select {
   display: flex;
-  background: var(--dse-btn-primary-bg, #5ece7b);
-  color: var(--dse-btn-primary-color, #fff);
-  border: none;
-  padding: 0.25rem;
+  flex-direction: column;
+  position: relative;
+}
+.dse-select__label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem;
+  border: 1px solid var(--dse-form-border-color, #f1f2f3);
+  background: var(--dse-form-bg-color, #fff);
+  font-family: var(--dse-body-font-family, "Playfair Display", serif);
+  cursor: pointer;
+}
+.dse-select__overlay {
+  padding: 0rem;
+  margin: 0rem;
+  border: 1px solid var(--dse-form-border-color, #f1f2f3);
+  background-color: var(--dse-form-bg-color, #fff);
+  z-index: 99;
+  position: absolute;
+  width: 100%;
 }
