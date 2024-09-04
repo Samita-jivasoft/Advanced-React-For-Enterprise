@@ -43,5 +43,8 @@
   },
   "dependencies": {
     "@storybook/addon-controls": "^8.2.9"
+  },
+  "publishConfig":{
+    "access": "public"
   }
 }
