@@ -1,6 +1,6 @@
 {
   "name": "@advanced-react-for-enterprise/react",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "main": "lib/index.js",
   "license": "MIT",
   "devDependencies": {
@@ -44,7 +44,7 @@
   "dependencies": {
     "@storybook/addon-controls": "^8.2.9"
   },
-  "publishConfig":{
+  "publishConfig": {
     "access": "public"
   }
 }
