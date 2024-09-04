@@ -4,7 +4,8 @@ module.exports = {
     addons: [
         getAbsolutePath("@storybook/preset-typescript"),
         "@storybook/addon-webpack5-compiler-babel",
-        "@chromatic-com/storybook"
+        "@chromatic-com/storybook", "@storybook/addon-storysource"
+
     ],
 
     framework: {
