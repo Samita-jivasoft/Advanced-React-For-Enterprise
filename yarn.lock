@@ -2204,7 +2204,7 @@
     memoizerific "^1.11.3"
     ts-dedent "^2.0.0"
 
-"@storybook/addon-controls@8.2.9":
+"@storybook/addon-controls@8.2.9", "@storybook/addon-controls@^8.2.9":
   version "8.2.9"
   resolved "https://registry.yarnpkg.com/@storybook/addon-controls/-/addon-controls-8.2.9.tgz#43f9ca53e2a709feee0c1fe6db3daee8953d2ddd"
   integrity sha512-vaSE78KOE7SO0GrW4e+mdQphSNpvCX/FGybIRxyaKX9h8smoyUwRNHVyCS3ROHTwH324QWu7GDzsOVrnyXOv0A==

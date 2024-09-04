@@ -39,5 +39,8 @@
     "test:watch": "yarn test --watch",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
+  },
+  "dependencies": {
+    "@storybook/addon-controls": "^8.2.9"
   }
 }
