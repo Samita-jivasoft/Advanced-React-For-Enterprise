@@ -30,15 +30,3 @@ jobs:
       - name: Automated tests
         run: yarn test
 
-      # Debugging: Test if the Token is set
-      - name: Check if Chromatic Project Token is set
-        run: echo "Chromatic token is set"
-        env:
-          CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-        if: env.CHROMATIC_PROJECT_TOKEN != ''
-
-      # Run Chromatic
-      - name: Visual regression tests
-        env:
-          CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-        run: yarn test:chromatic
