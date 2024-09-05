@@ -13,7 +13,10 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             # Checkout the code
-            - uses: actions/checkout@v2
+            - name: Checout code
+              uses: actions/checkout@v2
+                    with:
+                        fetch-depth: 0
 
             # Install dependencies
             - name: Install dependencies
