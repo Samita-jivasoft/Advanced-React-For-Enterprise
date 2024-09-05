@@ -1,44 +1,44 @@
 name: Build & Test CI
 
 on:
-    push:
-        branches:
-            - main
-    pull_request:
-        branches:
-            - main
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
-    builds:
-        runs-on: ubuntu-latest
-        steps:
-            # Checkout the code
-            - name: Checout code
-              uses: actions/checkout@v2
-                    with:
-                        fetch-depth: 0
+  builds:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
-            # Install dependencies
-            - name: Install dependencies
-              run: yarn
+      # Install dependencies
+      - name: Install dependencies
+        run: yarn
 
-            # Build the packages
-            - name: Build packages
-              run: yarn build
+      # Build the packages
+      - name: Build packages
+        run: yarn build
 
-            # Run automated tests
-            - name: Automated tests
-              run: yarn test
+      # Run automated tests
+      - name: Automated tests
+        run: yarn test
 
-            # Debugging: Test if the Token is set
-            - name: Check if Chromatic Project Token is set
-              run: echo "Chromatic token is set"
-              env:
-                CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-              if: env.CHROMATIC_PROJECT_TOKEN != ''
+      # Debugging: Test if the Token is set
+      - name: Check if Chromatic Project Token is set
+        run: echo "Chromatic token is set"
+        env:
+          CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+        if: env.CHROMATIC_PROJECT_TOKEN != ''
 
-            # Run Chromatic 
-            - name: Visual regression tests
-              env:
-                CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-              run: yarn test:chromatic
+      # Run Chromatic
+      - name: Visual regression tests
+        env:
+          CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+        run: yarn test:chromatic
