@@ -12,14 +12,29 @@ jobs:
     builds:
         runs-on: ubuntu-latest
         steps:
+            # Checkout the code
             - uses: actions/checkout@v2
 
+            # Install dependencies
             - name: Install dependencies
               run: yarn
+
+            # Build the packages
             - name: Build packages
               run: yarn build
+
+            # Run automated tests
             - name: Automated tests
               run: yarn test
+
+            # Debugging: Test if the Token is set
+            - name: Check if Chromatic Project Token is set
+              run: echo "Chromatic token is set"
+              env:
+                CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+              if: env.CHROMATIC_PROJECT_TOKEN != ''
+
+            # Run Chromatic 
             - name: Visual regression tests
               env:
                 CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
