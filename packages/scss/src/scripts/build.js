@@ -37,6 +37,9 @@ const compile = (path, fileName) => {
         result.css.toString()
     );    
 };
+try{
+    Fs.mkdirSync(Path.resolve('lib'))
+} catch(e){}
 
 // Compile global SCSS file
 compile('src/global.scss', 'lib/global.css');
