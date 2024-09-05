@@ -41,7 +41,7 @@
     "test:watch": "yarn test --watch",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-     "test:chromatic": "chromatic --project-token=\"$CHROMATIC_PROJECT_TOKEN\""
+    "test:chromatic": "chromatic --project-token=\"$CHROMATIC_PROJECT_TOKEN\""
   },
   "dependencies": {
     "@storybook/addon-controls": "^8.2.9"

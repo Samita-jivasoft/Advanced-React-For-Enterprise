@@ -30,6 +30,7 @@
     "publish": "yarn test && yarn build && yarn lerna publish",
     "commit": "yarn git-cz",
     "prepare": "husky install",
+    "build-storybook":  "yarn build && yarn lerna run build-storybook",
     "test:chromatic": "yarn lerna run test:chromatic"
   },
   "config": {
