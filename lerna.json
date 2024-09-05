@@ -6,5 +6,10 @@
     "playgrounds/*"
   ],
   "npmClient": "yarn",
-  "stream": true
+  "stream": true,
+  "command": {
+    "publish": {
+      "converntionalCommits": true
+    }
+  }
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import FontSizes from '../../foundation/FontSize'
 
-interface TextProps {
+export interface TextProps {
     size?: keyof typeof FontSizes
     children?: React.ReactNode
 }
