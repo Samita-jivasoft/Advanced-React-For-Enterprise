@@ -1,0 +1,17 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.StyledSearchResultList = exports.StyledSearchResult = exports.StyledResultItem = exports.StyledPinIcon = exports.StyledPinDiv = exports.StyledIconDiv = void 0;
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+var _bs = require("react-icons/bs");
+var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6;
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+function _taggedTemplateLiteral(e, t) { return t || (t = e.slice(0)), Object.freeze(Object.defineProperties(e, { raw: { value: Object.freeze(t) } })); }
+const StyledSearchResult = exports.StyledSearchResult = _styledComponents.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    display: flex;\n    flex-direction: column;\n    flex-wrap: wrap;\n    align-items: center; \n    justify-content: center;\n    overflow:hidden;\n    text-align:center;   \n    cursor: pointer;\n    row-gap: .5rem;\n    font-size: .8rem;\n    font-weight: bold;\n    font-family: sans-serif;\n    border: 0;\n    border-radius: 5px;\n    height: 8rem;\n    width: 9rem;\n    padding: 0 2% 0 2%;\n    border:1px solid ", ";\n    background: ", ";\n    color: ", ";\n    // color:white;\n    transition: 0.5s;\n\n    &: hover{\n        border: 1px solid white;\n    }\n"])), props => props.color === 'fire' ? "#ad1f0c" : props.theme.materiala1, props => props.color === 'fire' ? "#ad1f0c" : props.theme.materialb1, props => props.color === 'fire' ? "black" : props.theme.text);
+const StyledResultItem = exports.StyledResultItem = _styledComponents.default.div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n", ";\nmax-width:650px;\nwidth:100%;\ntransition: 0.25s;\n\n"])), props => props.theme.panela2);
+const StyledSearchResultList = exports.StyledSearchResultList = _styledComponents.default.div(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    display: flex;\n    align-items:center;\n    justify-content:center;\n    width: 100%;\n    height: auto;\n    padding-top: 10px;\n    font-size : 1rem;\n    font-weight: 500;\n    &:hover{\n        cursor: pointer;\n\n    }\n    &:hover ", " {\n        ", ";\n         font-size : calc(1rem + .1vmin);  }\n  \n"])), StyledResultItem, props => props.theme.panela3);
+const StyledPinDiv = exports.StyledPinDiv = _styledComponents.default.div(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n    display: flex;\n    align-items: center;\n    justify-content: flex-end;\n    border-radius: 5px;\n    width: 100%;\n    height: 25%;\n"])));
+const StyledIconDiv = exports.StyledIconDiv = _styledComponents.default.div(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    height: 100%;\n    width: 25%;\n"])));
+const StyledPinIcon = exports.StyledPinIcon = (0, _styledComponents.default)(_bs.BsPinAngleFill)(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["\n    height: 80%;\n    width: 80%;\n    color: ", ";\n    transition: 0.5s;\n    padding: 10%;\n    \n    &: hover{\n        padding: 0;\n        border-radius: 100%;\n    }\n"])), props => props.theme.text || 'lightgreen');

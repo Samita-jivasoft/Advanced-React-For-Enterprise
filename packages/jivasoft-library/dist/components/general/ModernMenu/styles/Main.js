@@ -1,0 +1,19 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Wrapper = exports.VerticalLineStyled = exports.RowContainer = exports.MenuStyledRow = exports.MenuStyledColumn = exports.HorizontalLineStyled = exports.DraggableParent = exports.ContentWrapper = exports.ColumnContainer = void 0;
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9;
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+function _taggedTemplateLiteral(e, t) { return t || (t = e.slice(0)), Object.freeze(Object.defineProperties(e, { raw: { value: Object.freeze(t) } })); }
+const Wrapper = exports.Wrapper = _styledComponents.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  border:2px solid purple;\n  display: flex;\n  flex-direction:column;\n  // align-items: space-between;\n  // justify-content: center;\n  position:fixed;\n  top:0;\n  left:0;\n  width:100%;\n  height:100%;\n"])));
+const RowContainer = exports.RowContainer = _styledComponents.default.div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\nborder: 1px solid black;\n  justify-content: center;\n  // position:absolute;\n  display: flex;\n  height: 80px;\n  width: 100%;\n"])));
+const ColumnContainer = exports.ColumnContainer = _styledComponents.default.div(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n  border:2px solid blue;\n  display:flex;\n  justify-content: center;\n  align-items: center;\n  height:100%;\n  width: 80px;\n"])));
+const ContentWrapper = exports.ContentWrapper = _styledComponents.default.div(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n  border: 2px solid green;\n  z-index: 100;\n  padding: 20px;\n  height: fit-content;\n  width: fit-content;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor:move;\n"])));
+const DraggableParent = exports.DraggableParent = _styledComponents.default.div(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n  background: red;\n  padding: 20px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  touch-action:none;\n"])));
+const MenuStyledRow = exports.MenuStyledRow = _styledComponents.default.div(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["\n  column-gap: 10px;\n  height: 50px;\n  width:fit-content;\n  font-size: 25px;\n  box-shadow:5px 5px 15px 5px rgba(0,0,0,0.32);\n  background:#e5e5e5;\n  padding-left:15px;\n  padding-right:15px;\n  border-radius: 200px;\n  align-items: center;\n  justify-content:center;\n  display:flex;\n  flex-direction:row;\n  cursor:default;\n  touch-action:none;\n"])));
+const MenuStyledColumn = exports.MenuStyledColumn = _styledComponents.default.div(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["\n  row-gap: 10px;\n  height: fit-content;\n  font-size: 25px;\n  box-shadow:5px 5px 15px 5px rgba(0,0,0,0.32);\n  background:#e5e5e5;\n  padding-left:15px;\n  padding-right:15px;\n  padding-top:15px;\n  padding-bottom:15px;\n  border-radius: 200px;\n  align-items: center;\n  justify-content:center;\n  display:flex;\n  flex-direction:column;\n  cursor:default;\n  touch-action:none;\n"])));
+const VerticalLineStyled = exports.VerticalLineStyled = _styledComponents.default.div(_templateObject8 || (_templateObject8 = _taggedTemplateLiteral(["\n  height:50%;\n  width:1px;\n  background-color:grey;\n"])));
+const HorizontalLineStyled = exports.HorizontalLineStyled = _styledComponents.default.div(_templateObject9 || (_templateObject9 = _taggedTemplateLiteral(["\n  height:1px;\n  width:100%;\n  background-color:grey;\n"])));

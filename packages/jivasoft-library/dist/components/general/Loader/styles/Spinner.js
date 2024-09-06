@@ -1,0 +1,21 @@
+"use strict";
+
+require("core-js/modules/es.weak-map.js");
+require("core-js/modules/web.dom-collections.iterator.js");
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.SpinnerStyled = void 0;
+var _styledComponents = _interopRequireWildcard(require("styled-components"));
+var _templateObject, _templateObject2;
+function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
+function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { default: e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n.default = e, t && t.set(e, n), n; }
+function _taggedTemplateLiteral(e, t) { return t || (t = e.slice(0)), Object.freeze(Object.defineProperties(e, { raw: { value: Object.freeze(t) } })); }
+const SpinnerStyled = exports.SpinnerStyled = _styledComponents.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  ", "\n"])), _ref => {
+  var _theme$animation;
+  let {
+    theme,
+    size
+  } = _ref;
+  return (0, _styledComponents.css)(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    border-radius: 50%;\n    box-sizing: border-box;\n    border: ", "px solid ", ";\n    border-top: ", "px solid ", ";\n    width: ", "px;\n    height: ", "px;\n    ", "\n  "])), size * 0.2, theme.bgb3, size * 0.2, theme.bga3, size, size, theme === null || theme === void 0 || (_theme$animation = theme.animation) === null || _theme$animation === void 0 || (_theme$animation = _theme$animation.emphasis) === null || _theme$animation === void 0 ? void 0 : _theme$animation.spin);
+});
