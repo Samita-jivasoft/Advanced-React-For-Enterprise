@@ -91,6 +91,7 @@
     "@babel/cli": "^7.18.10",
     "@babel/core": "^7.18.10",
     "@babel/preset-env": "^7.18.10",
+    "@babel/preset-react": "^7.24.7",
     "prop-types": "^15.8.1",
     "source-map-explorer": "^2.5.3"
   },
